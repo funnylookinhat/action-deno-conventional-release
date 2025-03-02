@@ -1,0 +1,31 @@
+name: "Generate Release for Deno with Conventional Commit"
+description: "Generates a release for a Deno project based on conventional commits"
+author: "David Overcash"
+
+inputs:
+  GITHUB_TOKEN:
+    description: "A github token with write access to the repository"
+    required: true
+  GITHUB_REPOSITORY:
+    description: "The repository name in the format owner/repo"
+    required: true
+
+# TODO - Consider adding RELEASE_FORCE_VERSION to inputs.
+
+runs:
+  steps:
+    - name: Setup Deno
+      uses: denoland/setup-deno@v1
+      with:
+        deno-version: v2.x
+    
+    - name: Configure Git
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Generate Release
+      run: deno task generate-release
+      env:
+        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
+        GITHUB_REPOSITORY: ${{ inputs.GITHUB_REPOSITORY }}

@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "generate-release": "deno run --allow-all scripts/generate-release.ts",
+    "generate-release": "deno run --allow-all generate-release.ts"
   },
   "imports": {
     "@octokit/rest": "npm:@octokit/rest@^21.1.1",

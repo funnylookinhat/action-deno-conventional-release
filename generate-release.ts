@@ -133,9 +133,6 @@ const git = simpleGit();
 
 const forcedNewVersion = Deno.env.get("RELEASE_FORCE_VERSION") ?? undefined;
 
-// Ensure we are in project root.
-Deno.chdir(resolve(import.meta.dirname, ".."));
-
 // Ensure we have a GITHUB_TOKEN provided.
 const GITHUB_TOKEN = Deno.env.get("GITHUB_TOKEN");
 if (GITHUB_TOKEN === undefined || GITHUB_TOKEN.length === 0) {

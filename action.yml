@@ -24,11 +24,13 @@ runs:
         deno-version: v2.x
     
     - name: Configure Git
+      shell: bash
       run: |
         git config --local user.name "github-actions[bot]"
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
 
     - name: Generate Release
+      shell: bash
       run: deno task generate-release
       env:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}

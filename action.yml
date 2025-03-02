@@ -1,6 +1,8 @@
 name: "Generate Release for Deno with Conventional Commit"
 description: "Generates a release for a Deno project based on conventional commits"
 author: "David Overcash"
+icon: check
+color: "green"
 
 inputs:
   GITHUB_TOKEN:

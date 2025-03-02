@@ -189,7 +189,7 @@ let denoJson: DenoConfig;
 
 try {
   const denoJsonText = await Deno.readTextFile(
-    resolve(import.meta.dirname, "../", "deno.json"),
+    "./deno.json",
   );
   denoJson = JSON.parse(denoJsonText);
   isDenoConfig(denoJson);
@@ -257,7 +257,7 @@ console.log(`Generated changelog:\n${changelog}`);
 // Update deno.json
 
 Deno.writeTextFile(
-  resolve(import.meta.dirname, "../", "deno.json"),
+  "./deno.json",
   JSON.stringify(
     {
       ...denoJson,

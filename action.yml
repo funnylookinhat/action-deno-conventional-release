@@ -3,8 +3,8 @@ description: "Generates a release for a Deno project based on conventional commi
 author: "David Overcash"
 
 branding:
-icon: "check"
-color: "green"
+  icon: "check"
+  color: "green"
 
 inputs:
   GITHUB_TOKEN:

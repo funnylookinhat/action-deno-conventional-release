@@ -33,6 +33,7 @@ runs:
     - name: Generate Release
       shell: bash
       run: deno run --allow-all ${{ github.action_path }}/generate-release.ts
+      working-directory: ${{ github.workspace }}
       env:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         GITHUB_REPOSITORY: ${{ inputs.GITHUB_REPOSITORY }}

@@ -17,6 +17,7 @@ inputs:
 # TODO - Consider adding RELEASE_FORCE_VERSION to inputs.
 
 runs:
+  using: "composite"
   steps:
     - name: Setup Deno
       uses: denoland/setup-deno@v1

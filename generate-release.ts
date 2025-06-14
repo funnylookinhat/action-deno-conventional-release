@@ -287,7 +287,7 @@ try {
 
 // Commit changes
 try {
-  await git.commit("chore: Release Version ${newVersion}");
+  await git.commit(`chore: Release Version ${newVersion}`);
 } catch (error) {
   isError(error);
   logAndExit(`Could not commit to git.`, error.message);
